@@ -29,12 +29,6 @@ jobs:
     - name: List directory contents
       run: ls -la
 
-    - name: Change to chat_app directory
-      run: cd chat_app
-
-    - name: List chat_app contents
-      run: ls -la
-
     - name: Check Flutter version
       run: flutter --version
 
@@ -57,7 +51,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: release-apk
-        path: chat_app/build/app/outputs/flutter-apk/app-release.apk
+        path: build/app/outputs/flutter-apk/app-release.apk
 
     - name: Create Release
       if: github.ref == 'refs/heads/main'
@@ -81,6 +75,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./chat_app/build/app/outputs/flutter-apk/app-release.apk
+        asset_path: ./build/app/outputs/flutter-apk/app-release.apk
         asset_name: ChatApp-v${{ github.run_number }}.apk
         asset_content_type: application/vnd.android.package-archive
