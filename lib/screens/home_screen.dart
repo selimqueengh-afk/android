@@ -109,14 +109,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     size: 80,
                     color: AppColors.textTertiary,
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   Text(
                     'Henüz sohbet yok',
                     style: AppTextStyles.h3.copyWith(
                       color: AppColors.textSecondary,
                     ),
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Text(
                     'Yeni bir sohbet başlatmak için + butonuna tıklayın',
                     style: AppTextStyles.bodyMedium.copyWith(
@@ -130,7 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
           }
 
           return ListView.builder(
-            padding: const EdgeInsets.all(16),
+            padding: EdgeInsets.all(16),
             itemCount: chatProvider.chatRooms.length,
             itemBuilder: (context, index) {
               final chatRoom = chatProvider.chatRooms[index];
