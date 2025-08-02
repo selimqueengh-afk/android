@@ -26,8 +26,20 @@ jobs:
         flutter-version: '3.32.8'
         channel: 'stable'
 
+    - name: List directory contents
+      run: ls -la
+
     - name: Change to chat_app directory
       run: cd chat_app
+
+    - name: List chat_app contents
+      run: ls -la
+
+    - name: Check Flutter version
+      run: flutter --version
+
+    - name: Check if pubspec.yaml exists
+      run: cat pubspec.yaml | head -10
 
     - name: Install dependencies
       run: flutter pub get
