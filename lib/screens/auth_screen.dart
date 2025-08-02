@@ -82,9 +82,9 @@ class _AuthScreenState extends State<AuthScreen>
       _isLoading = false;
     });
 
-    if (success) {
+    if (success && mounted) {
       Navigator.pushReplacementNamed(context, '/home');
-    } else {
+    } else if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(authProvider.error ?? 'Bir hata oluştu'),

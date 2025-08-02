@@ -73,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () {
               // TODO: Implement search
             },
-            icon: const Icon(
+            icon: Icon(
               Icons.search,
               color: AppColors.textSecondary,
             ),
@@ -82,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () {
               // TODO: Implement settings
             },
-            icon: const Icon(
+            icon: Icon(
               Icons.more_vert,
               color: AppColors.textSecondary,
             ),
@@ -104,7 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.chat_bubble_outline,
                     size: 80,
                     color: AppColors.textTertiary,

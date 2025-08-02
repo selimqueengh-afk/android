@@ -168,7 +168,7 @@ class MessageBubble extends StatelessWidget {
                         '${(message.fileSize! / 1024).toStringAsFixed(1)} KB',
                         style: AppTextStyles.caption.copyWith(
                           color: isMe 
-                              ? AppColors.messageTextSent.withOpacity(0.7)
+                              ? AppColors.messageTextSent.withValues(alpha: 0.7)
                               : AppColors.textTertiary,
                         ),
                       ),

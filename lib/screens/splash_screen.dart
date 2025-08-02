@@ -34,7 +34,9 @@ class _SplashScreenState extends State<SplashScreen>
     _animationController.forward();
 
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, '/auth');
+      if (mounted) {
+        Navigator.pushReplacementNamed(context, '/auth');
+      }
     });
   }
 

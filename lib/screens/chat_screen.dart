@@ -156,7 +156,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.chat_bubble_outline,
                           size: 80,
                           color: AppColors.textTertiary,
@@ -216,7 +216,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   onPressed: () {
                     // TODO: Implement attachment
                   },
-                  icon: const Icon(
+                  icon: Icon(
                     Icons.attach_file,
                     color: AppColors.textSecondary,
                   ),
