@@ -246,7 +246,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     ),
                   ),
                 ),
-                SizedBox(width: 8),
+                const SizedBox(width: 8),
                 Container(
                   decoration: BoxDecoration(
                     gradient: AppColors.primaryGradient,
@@ -254,7 +254,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   ),
                   child: IconButton(
                     onPressed: _sendMessage,
-                    icon: const Icon(
+                    icon: Icon(
                       Icons.send,
                       color: Colors.white,
                     ),
