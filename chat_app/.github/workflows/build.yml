@@ -14,6 +14,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Change to chat_app directory
+      run: cd chat_app
+
     - name: Setup Java
       uses: actions/setup-java@v4
       with:
