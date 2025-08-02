@@ -109,14 +109,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     size: 80,
                     color: AppColors.textTertiary,
                   ),
-                  const SizedBox(height: 16),
+                  SizedBox(height: 16),
                   Text(
                     'Henüz sohbet yok',
                     style: AppTextStyles.h3.copyWith(
                       color: AppColors.textSecondary,
                     ),
                   ),
-                  const SizedBox(height: 8),
+                  SizedBox(height: 8),
                   Text(
                     'Yeni bir sohbet başlatmak için + butonuna tıklayın',
                     style: AppTextStyles.bodyMedium.copyWith(
