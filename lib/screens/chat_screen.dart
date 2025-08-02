@@ -216,7 +216,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   onPressed: () {
                     // TODO: Implement attachment
                   },
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.attach_file,
                     color: AppColors.textSecondary,
                   ),
@@ -254,7 +254,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   ),
                   child: IconButton(
                     onPressed: _sendMessage,
-                    icon: const Icon(
+                    icon: Icon(
                       Icons.send,
                       color: Colors.white,
                     ),

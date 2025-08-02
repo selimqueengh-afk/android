@@ -73,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () {
               // TODO: Implement search
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.search,
               color: AppColors.textSecondary,
             ),
@@ -82,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () {
               // TODO: Implement settings
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.more_vert,
               color: AppColors.textSecondary,
             ),
@@ -144,7 +144,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Navigator.pushNamed(context, '/new-chat');
         },
         backgroundColor: AppColors.primary,
-        child: const Icon(
+        child: Icon(
           Icons.chat,
           color: Colors.white,
         ),
