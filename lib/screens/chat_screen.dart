@@ -246,7 +246,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     ),
                   ),
                 ),
-                const SizedBox(width: 8),
+                SizedBox(width: 8),
                 Container(
                   decoration: BoxDecoration(
                     gradient: AppColors.primaryGradient,
