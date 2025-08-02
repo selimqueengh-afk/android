@@ -204,7 +204,7 @@ class _ChatScreenState extends State<ChatScreen> {
               color: AppColors.surface,
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
+                  color: Colors.black.withValues(alpha: 0.05),
                   blurRadius: 10,
                   offset: const Offset(0, -2),
                 ),
@@ -227,7 +227,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       color: AppColors.background,
                       borderRadius: BorderRadius.circular(25),
                       border: Border.all(
-                        color: AppColors.textTertiary.withOpacity(0.3),
+                        color: AppColors.textTertiary.withValues(alpha: 0.3),
                       ),
                     ),
                     child: TextField(
@@ -248,7 +248,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 ),
                 const SizedBox(width: 8),
                 Container(
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     gradient: AppColors.primaryGradient,
                     shape: BoxShape.circle,
                   ),

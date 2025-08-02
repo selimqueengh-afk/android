@@ -35,7 +35,7 @@ class FirebaseService {
       
       return credential;
     } catch (e) {
-      print('Sign up error: $e');
+      // Sign up error: $e
       return null;
     }
   }
@@ -50,7 +50,7 @@ class FirebaseService {
         password: password,
       );
     } catch (e) {
-      print('Sign in error: $e');
+      // Sign in error: $e
       return null;
     }
   }
@@ -96,7 +96,7 @@ class FirebaseService {
       }
       return null;
     } catch (e) {
-      print('Get user error: $e');
+      // Get user error: $e
       return null;
     }
   }
@@ -111,7 +111,7 @@ class FirebaseService {
           .map((doc) => UserModel.fromMap(doc.data()))
           .toList();
     } catch (e) {
-      print('Get all users error: $e');
+      // Get all users error: $e
       return [];
     }
   }
@@ -126,7 +126,7 @@ class FirebaseService {
         'lastSeen': DateTime.now().toIso8601String(),
       });
     } catch (e) {
-      print('Update user status error: $e');
+      // Update user status error: $e
     }
   }
 
@@ -147,7 +147,7 @@ class FirebaseService {
       
       return docRef.id;
     } catch (e) {
-      print('Create chat room error: $e');
+      // Create chat room error: $e
       return '';
     }
   }
@@ -167,7 +167,7 @@ class FirebaseService {
           }))
           .toList();
     } catch (e) {
-      print('Get user chat rooms error: $e');
+      // Get user chat rooms error: $e
       return [];
     }
   }
@@ -190,7 +190,7 @@ class FirebaseService {
         'updatedAt': DateTime.now().toIso8601String(),
       });
     } catch (e) {
-      print('Send message error: $e');
+      // Send message error: $e
     }
   }
 
@@ -213,7 +213,7 @@ class FirebaseService {
       final snapshot = await uploadTask;
       return await snapshot.ref.getDownloadURL();
     } catch (e) {
-      print('Upload file error: $e');
+      // Upload file error: $e
       return null;
     }
   }

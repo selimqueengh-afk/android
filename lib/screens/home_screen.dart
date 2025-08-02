@@ -92,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Consumer<ChatProvider>(
         builder: (context, chatProvider, child) {
           if (chatProvider.isLoading) {
-            return const Center(
+            return Center(
               child: CircularProgressIndicator(
                 color: AppColors.primary,
               ),

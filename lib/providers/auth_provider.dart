@@ -32,7 +32,7 @@ class AuthProvider extends ChangeNotifier {
       _currentUser = await FirebaseService.getUserById(uid);
       notifyListeners();
     } catch (e) {
-      print('Load user profile error: $e');
+      // Load user profile error: $e
     }
   }
 
@@ -111,7 +111,7 @@ class AuthProvider extends ChangeNotifier {
       _currentUser = null;
       notifyListeners();
     } catch (e) {
-      print('Sign out error: $e');
+      // Sign out error: $e
     }
   }
 

@@ -38,7 +38,7 @@ class MessageBubble extends StatelessWidget {
           ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
+              color: Colors.black.withValues(alpha: 0.05),
               blurRadius: 5,
               offset: const Offset(0, 2),
             ),
@@ -56,7 +56,7 @@ class MessageBubble extends StatelessWidget {
                   DateFormat('HH:mm').format(message.timestamp),
                   style: AppTextStyles.caption.copyWith(
                     color: isMe 
-                        ? AppColors.messageTextSent.withOpacity(0.7)
+                        ? AppColors.messageTextSent.withValues(alpha: 0.7)
                         : AppColors.textTertiary,
                     fontSize: 10,
                   ),
@@ -68,7 +68,7 @@ class MessageBubble extends StatelessWidget {
                     size: 12,
                     color: message.isRead 
                         ? AppColors.success 
-                        : AppColors.messageTextSent.withOpacity(0.7),
+                        : AppColors.messageTextSent.withValues(alpha: 0.7),
                   ),
                 ],
               ],
@@ -138,7 +138,7 @@ class MessageBubble extends StatelessWidget {
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
             color: isMe 
-                ? AppColors.messageSent.withOpacity(0.1)
+                ? AppColors.messageSent.withValues(alpha: 0.1)
                 : AppColors.background,
             borderRadius: BorderRadius.circular(8),
           ),

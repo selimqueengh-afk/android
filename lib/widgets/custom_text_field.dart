@@ -38,7 +38,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         color: AppColors.background,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: AppColors.textTertiary.withOpacity(0.3),
+                                      color: AppColors.textTertiary.withValues(alpha: 0.3),
         ),
       ),
       child: TextFormField(
