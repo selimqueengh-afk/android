@@ -1,8 +1,8 @@
 import 'dart:typed_data';
+import 'dart:convert';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import '../models/user_model.dart';
 import '../models/message_model.dart';
 import '../models/chat_room_model.dart';
@@ -10,7 +10,6 @@ import '../models/chat_room_model.dart';
 class FirebaseService {
   static final FirebaseAuth _auth = FirebaseAuth.instance;
   static final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-  static final FirebaseStorage _storage = FirebaseStorage.instance;
 
   // Initialize Firebase
   static Future<void> initialize() async {
@@ -205,15 +204,45 @@ class FirebaseService {
             .toList());
   }
 
-  // File Upload Methods
+  // File Upload Methods (Using Firestore instead of Storage)
   static Future<String?> uploadFile(List<int> fileBytes, String fileName) async {
     try {
-      final ref = _storage.ref().child('uploads/$fileName');
-      final uploadTask = ref.putData(Uint8List.fromList(fileBytes));
-      final snapshot = await uploadTask;
-      return await snapshot.ref.getDownloadURL();
+      // Convert file bytes to base64 string for Firestore
+      final base64String = base64Encode(fileBytes);
+      
+      // Store file data in Firestore
+      final docRef = await _firestore
+          .collection('files')
+          .add({
+        'fileName': fileName,
+        'fileData': base64String,
+        'uploadTime': DateTime.now().toIso8601String(),
+        'fileSize': fileBytes.length,
+      });
+      
+      return docRef.id; // Return document ID as file reference
     } catch (e) {
       // Upload file error: $e
+      return null;
+    }
+  }
+
+  // Get file from Firestore
+  static Future<List<int>?> getFile(String fileId) async {
+    try {
+      final doc = await _firestore
+          .collection('files')
+          .doc(fileId)
+          .get();
+      
+      if (doc.exists) {
+        final data = doc.data()!;
+        final base64String = data['fileData'] as String;
+        return base64Decode(base64String);
+      }
+      return null;
+    } catch (e) {
+      // Get file error: $e
       return null;
     }
   }
