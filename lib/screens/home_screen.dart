@@ -130,7 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
           }
 
           return ListView.builder(
-            padding: EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
             itemCount: chatProvider.chatRooms.length,
             itemBuilder: (context, index) {
               final chatRoom = chatProvider.chatRooms[index];
